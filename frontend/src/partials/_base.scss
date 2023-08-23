@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "Bricolage Grotesque", sans-serif;
   -webkit-tap-highlight-color: transparent;
+
   // color: #393646;
 }
 button {
@@ -31,6 +32,7 @@ select {
 }
 body {
   // display: flex;
+  background-color: #d8d9da;
   background-color: #f9f5f6;
   height: 100vh;
   max-height: max-content;

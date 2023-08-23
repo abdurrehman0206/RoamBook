@@ -1,9 +1,8 @@
 .tour-card {
-  border: 1px solid $theme-accent2;
-  padding: $sm;
   width: max-content;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 }
 .tour-card-image {
   position: relative;
@@ -11,7 +10,7 @@
     display: block;
     border-radius: 10px;
     width: 300px;
-    height: 300px;
+    height: 350px;
     object-fit: cover;
   }
   .tour-location-float {
@@ -22,19 +21,34 @@
     top: $sm;
     left: $sm;
     padding: $sm;
-    background-color: $text-color;
+    background-color: $bg-color;
     border-radius: 5px;
-    font-weight: 500;
-    color: $theme-accent1;
+    font-weight: 600;
   }
 }
 .tour-card-body {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
   //   width: 100%;
   padding: $sm;
   position: absolute;
   bottom: $sm;
   left: $sm;
   right: $sm;
-  background-color: $text-color;
+  background-color: $bg-color;
   border-radius: 5px;
+
+  @include flex-layout(column, center, flex-start);
+  gap: $sm;
+  .tour-title {
+    h4 {
+      font-weight: 700;
+    }
+  }
+  .tour-info {
+    width: 100%;
+    @include flex-layout(row, space-between, center);
+    small {
+      font-weight: 600;
+    }
+  }
 }

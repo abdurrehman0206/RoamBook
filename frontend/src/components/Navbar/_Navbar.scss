@@ -2,13 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 1111;
-  background-color: #f9f5f6;
+  background-color: $bg-color;
 }
 .navbar {
   position: relative;
   @include flex-layout(row, space-between, center);
   padding: $md;
-  box-shadow: 0 1px 5px -1px $theme-accent2;
+  box-shadow: 0 1px 5px -1px $theme-accent1;
   @include device(mobile) {
     @include flex-layout(column, space-between, center);
     gap: $sm;

@@ -1,5 +1,5 @@
 .hero {
-  border: 1px solid red;
+  // border: 1px solid red;
   @include flex-layout(row, space-between, center);
   @include device(mobile) {
     @include flex-layout(column-reverse, center, center);

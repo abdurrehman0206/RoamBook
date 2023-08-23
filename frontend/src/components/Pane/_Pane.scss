@@ -1,8 +1,9 @@
 .pane {
-  border: 1px solid red;
+  //   border: 1px solid red;
 }
 
 .pane-header {
+  padding: $lg 0;
   @include flex-layout(row, space-between, center);
   .view-all-icon {
     font-size: $xxl;
@@ -15,4 +16,9 @@
       transform: scale(1.1);
     }
   }
+}
+.pane-body {
+  @include flex-layout(row, center, center);
+  flex-wrap: wrap;
+  gap: $xxl;
 }

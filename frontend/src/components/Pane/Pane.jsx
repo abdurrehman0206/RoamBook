@@ -11,6 +11,9 @@ function Pane(props) {
         </div>
         <div className="pane-body">
           <TourCard />
+          <TourCard />
+          <TourCard />
+          {/* <TourCard />   */}
         </div>
       </div>
     </div>
