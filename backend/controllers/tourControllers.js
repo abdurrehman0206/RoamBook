@@ -83,6 +83,12 @@ const getTour = async (req, res) => {
     });
   }
   try {
+    const tour = await Tour.findById(id);
+    return res.status(200).send({
+      success: true,
+      message: "Tour fetched successfully",
+      data: tour,
+    });
   } catch (error) {
     return res.status(500).send({
       success: false,
