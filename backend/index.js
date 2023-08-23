@@ -19,6 +19,12 @@ const logger = (req, res, next) => {
 };
 app.use(logger);
 
+const userRoutes = require("./routes/userRoutes");
+const tourRoutes = require("./routes/tourRoutes");
+
+app.use("/api/users", userRoutes);
+app.use("/api/tours", tourRoutes);
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
