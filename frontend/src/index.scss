@@ -1,0 +1,29 @@
+@import "./partials/_imports.scss";
+@import "./components/Navbar/Navbar";
+@import "./components/Hero/Hero"; //to be moved to home
+@import "./components/Pane/Pane";
+@import "./components/TourCard/TourCard";
+@import "./pages/Home/Home";
+.App-container {
+  height: 100%;
+  width: 100%;
+  .App {
+    display: flex;
+    flex-direction: column;
+    gap: $lg;
+
+    z-index: 1;
+    width: 90%;
+    height: 100%;
+    max-width: 1200px;
+    padding: $lg;
+    margin: 0 auto;
+
+    @include device(tablet) {
+      width: 100%;
+    }
+    @include device(mobile) {
+      width: 100%;
+    }
+  }
+}

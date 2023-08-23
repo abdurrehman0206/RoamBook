@@ -28,10 +28,18 @@ const loginUser = async (req, res) => {
   try {
     const user = await User.login(email, password);
     const token = generateToken(user._id, user.email);
+    const userPayload = {
+      id: user._id,
+      email: user.email,
+      fullname: user.fullname,
+      username: user.username,
+      image: user.image,
+      token,
+    };
     return res.status(200).send({
       success: true,
       message: "Login successful",
-      token,
+      user: userPayload,
     });
   } catch (error) {
     return res.status(500).send({
@@ -53,10 +61,18 @@ const signupUser = async (req, res) => {
   try {
     const user = await User.signup(email, password, fullname, username, image);
     const token = generateToken(user._id, user.email);
+    const userPayload = {
+      id: user._id,
+      email: user.email,
+      fullname: user.fullname,
+      username: user.username,
+      image: user.image,
+      token,
+    };
     return res.status(200).send({
       success: true,
       message: "User created successfully",
-      token,
+      user: userPayload,
     });
   } catch (error) {
     return res.status(500).send({
@@ -66,8 +82,44 @@ const signupUser = async (req, res) => {
     });
   }
 };
+const verifyToken = async (req, res) => {
+  const token = req.headers.authorization.split(" ")[1];
+  if (!token) {
+    return res.status(401).json({
+      success: false,
+      message: "Please provide a valid token",
+      error: "Invalid token",
+    });
+  }
+  try {
+    const { _id, email } = JWT.verify(token, process.env.SECRET);
+    const user = await User.findById({ _id, email });
+
+    const userPayload = {
+      id: user._id,
+      email: user.email,
+      fullname: user.fullname,
+      username: user.username,
+      image: user.image,
+      token,
+    };
+    return res.status(200).json({
+      success: true,
+      message: "Token verified successfully",
+      user: userPayload,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+      error: "Internal server error",
+    });
+  }
+};
 
 module.exports = {
   loginUser,
   signupUser,
+  verifyToken,
 };

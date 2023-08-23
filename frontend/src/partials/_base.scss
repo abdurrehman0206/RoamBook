@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bricolage Grotesque", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  // color: #393646;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input,
+textarea,
+select {
+  border: none;
+  outline: none;
+  background: none;
+}
+body {
+  // display: flex;
+  background-color: #f9f5f6;
+  height: 100vh;
+  max-height: max-content;
+  color: #393646;
+}
+::-webkit-scrollbar {
+  display: none;
+}

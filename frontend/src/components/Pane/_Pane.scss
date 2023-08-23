@@ -1,0 +1,18 @@
+.pane {
+  border: 1px solid red;
+}
+
+.pane-header {
+  @include flex-layout(row, space-between, center);
+  .view-all-icon {
+    font-size: $xxl;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+    &:hover {
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+      transform: scale(1.1);
+    }
+  }
+}
