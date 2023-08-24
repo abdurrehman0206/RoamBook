@@ -9,8 +9,9 @@ function Hero() {
             Unlock Your Next Adventure with Seamless Travel Booking at RoamBook
           </h2>
           <p>
-            Discover handpicked tours, effortless planning, and unforgettable
-            experiences in one place
+            RoamBook - Your Passport to Adventures <br /> Explore curated travel
+            experiences tailored to your desires. Effortlessly plan and book
+            your dream getaway with RoamBook. Your journey starts here.
           </p>
           <button className="btn-box-primary">Explore</button>
         </div>

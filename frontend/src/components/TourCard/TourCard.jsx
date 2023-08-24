@@ -1,25 +1,36 @@
 import React from "react";
-import testImage from "../../assets/hero-right.jpg";
+import { useNavigate } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
-
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 function TourCard(props) {
+  const nav = useNavigate();
+  const { tour } = props;
+
   return (
     <div className="tour-card-container">
       <div className="tour-card">
         <div className="tour-card-image">
+          <span
+            className="tour-detail-button"
+            onClick={() => nav(`/tours/${tour._id}`)}
+          >
+            <BsFillArrowRightCircleFill />
+          </span>
           <small className="tour-location-float c-ac2">
             {" "}
             <FaLocationDot />
-            Denmark
+            {tour.destination}
           </small>
-          <img src={testImage} alt="" />
+          <img src={tour.images[1]} alt="" />
           <div className="tour-card-body">
-            <div className="tour-info">
-              <small className="tour-days c-ac2">7 Days</small>
-              <small className="tour-price c-ac2">$50/day</small>
-            </div>
             <div className="tour-title">
-              <h4>Blue Lagoon</h4>
+              <h4>{tour.title}</h4>
+            </div>
+            <div className="tour-info">
+              <small className="tour-price c-ac2">
+                ${Math.round(tour.price / tour.duration)} / day
+              </small>
+              <small className="tour-days c-ac2">{tour.duration} Days</small>
             </div>
           </div>
         </div>

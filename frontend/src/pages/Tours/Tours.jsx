@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useToursContext } from "../../hooks/useToursContext";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { BiCurrentLocation } from "react-icons/bi";
 
 function Tours() {
+  const nav = useNavigate();
   const { tours } = useToursContext();
   console.log("🚀 ~ file: Tours.jsx:5 ~ Tours ~ tours:", tours);
 
@@ -36,10 +38,13 @@ function Tours() {
                   ${Math.round(tour.price / tour.duration)}/Day
                 </div>
               </div>
-                <div className="tour-block-desc">
-                    {tour.description}
-                </div>
-              <button className="btn-box-primary">Details</button>
+              <div className="tour-block-desc">{tour.description}</div>
+              <button
+                className="btn-box-primary"
+                onClick={() => nav(`/tours/${tour._id}`)}
+              >
+                Details
+              </button>
             </div>
           </div>
         ))}

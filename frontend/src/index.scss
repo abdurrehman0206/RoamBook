@@ -3,10 +3,11 @@
 @import "./components/Hero/Hero"; //to be moved to home
 @import "./components/Pane/Pane";
 @import "./components/TourCard/TourCard";
-
+@import "./components/SearchCard/SearchCard";
 //pages
 @import "./pages/Home/Home";
 @import "./pages/Tours/Tours";
+@import "./pages/Tour/Tour";
 .App-container {
   height: 100%;
   width: 100%;

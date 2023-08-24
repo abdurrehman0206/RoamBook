@@ -71,12 +71,14 @@
     font-weight: 500;
   }
   .tour-block-desc {
+    margin: $sm 0;
     max-width: calc(300px - $sm * 2);
     font-weight: 200;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
-    line-clamp: 2;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
     -webkit-box-orient: vertical;
+    min-height: 3lh;
   }
 }

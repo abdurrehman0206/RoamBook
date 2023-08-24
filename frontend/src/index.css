@@ -49,7 +49,7 @@ body {
 }
 
 .c-ac1 {
-  color: #5b9a8b;
+  color: #00ADB5;
 }
 
 .c-ac2 {
@@ -61,7 +61,7 @@ body {
 }
 
 .bg-ac1 {
-  background-color: #5b9a8b;
+  background-color: #00ADB5;
 }
 
 .bg-ac2 {
@@ -73,7 +73,7 @@ body {
 }
 
 .border-ac1 {
-  border: 1px solid #5b9a8b;
+  border: 1px solid #00ADB5;
 }
 
 .border-ac2 {
@@ -87,7 +87,7 @@ body {
 .btn-primary {
   white-space: nowrap;
   color: #f9f5f6;
-  background-color: #5b9a8b;
+  background-color: #00ADB5;
   padding: 0.5rem 1rem;
   font-weight: 700;
   border-radius: 20px;
@@ -99,16 +99,16 @@ body {
   .btn-primary:active {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #5b9a8b;
-    color: #5b9a8b;
+    border: 1px solid #00ADB5;
+    color: #00ADB5;
   }
 }
 @media (hover: hover) {
   .btn-primary:hover {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #5b9a8b;
-    color: #5b9a8b;
+    border: 1px solid #00ADB5;
+    color: #00ADB5;
   }
 }
 
@@ -119,16 +119,16 @@ body {
   font-weight: 700;
   border-radius: 20px;
   background-color: transparent;
-  border: 1px solid #5b9a8b;
+  border: 1px solid #00ADB5;
   transition: all 0.2s ease-in;
-  color: #5b9a8b;
+  color: #00ADB5;
 }
 @media (hover: none) {
   .btn-outline:active {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #5b9a8b;
+    background-color: #00ADB5;
   }
 }
 @media (hover: hover) {
@@ -136,7 +136,7 @@ body {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #5b9a8b;
+    background-color: #00ADB5;
   }
 }
 
@@ -144,7 +144,7 @@ body {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   color: #f9f5f6;
-  background-color: #5b9a8b;
+  background-color: #00ADB5;
   padding: 0.5rem 1rem;
   font-weight: 700;
   border-radius: 5px;
@@ -155,16 +155,16 @@ body {
   .btn-box-primary:active {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #5b9a8b;
-    color: #5b9a8b;
+    border: 1px solid #00ADB5;
+    color: #00ADB5;
   }
 }
 @media (hover: hover) {
   .btn-box-primary:hover {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #5b9a8b;
-    color: #5b9a8b;
+    border: 1px solid #00ADB5;
+    color: #00ADB5;
   }
 }
 
@@ -175,16 +175,16 @@ body {
   font-weight: 700;
   border-radius: 5px;
   background-color: transparent;
-  border: 1px solid #5b9a8b;
+  border: 1px solid #00ADB5;
   transition: all 0.2s ease-in;
-  color: #5b9a8b;
+  color: #00ADB5;
 }
 @media (hover: none) {
   .btn-box-outline:active {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #5b9a8b;
+    background-color: #00ADB5;
   }
 }
 @media (hover: hover) {
@@ -192,7 +192,7 @@ body {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #5b9a8b;
+    background-color: #00ADB5;
   }
 }
 
@@ -210,7 +210,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
-  box-shadow: 0 1px 5px -1px #5b9a8b;
+  box-shadow: 0 1px 5px -1px #00ADB5;
 }
 @media (max-width: 767px) {
   .navbar {
@@ -246,11 +246,11 @@ body {
 }
 .navbar-links a:hover {
   text-decoration: underline;
-  color: #5b9a8b;
+  color: #00ADB5;
 }
 .navbar-links a.active {
   text-decoration: none;
-  background-color: #5b9a8b;
+  background-color: #00ADB5;
   color: #f9f5f6;
 }
 @media (max-width: 767px) {
@@ -357,6 +357,7 @@ body {
 }
 
 .tour-card-image {
+  overflow: hidden;
   position: relative;
 }
 .tour-card-image img {
@@ -382,6 +383,33 @@ body {
   border-radius: 5px;
   font-weight: 600;
 }
+.tour-card-image .tour-detail-button {
+  display: none;
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #00ADB5;
+  border-radius: 50%;
+  background-color: #f9f5f6;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.tour-card-image .tour-detail-button:hover {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+.tour-card-image:hover .tour-detail-button {
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  display: flex;
+  transform: translateX(0px);
+}
 
 .tour-card-body {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
@@ -397,6 +425,9 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
+}
+.tour-card-body .tour-title {
+  width: 100%;
 }
 .tour-card-body .tour-title h4 {
   font-weight: 700;
@@ -514,13 +545,15 @@ body {
   font-weight: 500;
 }
 .tour-block-body .tour-block-desc {
+  margin: 0.5rem 0;
   max-width: calc(300px - 1rem);
   font-weight: 200;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  line-clamp: 2;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  line-clamp: 3;
   -webkit-box-orient: vertical;
+  min-height: 3lh;
 }
 
 .App-container {
