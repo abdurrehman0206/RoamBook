@@ -2,14 +2,18 @@
   width: max-content;
   border-radius: 10px;
   position: relative;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: $box-shadow;
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
 }
 .tour-card-image {
   position: relative;
   img {
     display: block;
     border-radius: 10px;
-    width: 300px;
+    width: 285px;
     height: 350px;
     object-fit: cover;
   }

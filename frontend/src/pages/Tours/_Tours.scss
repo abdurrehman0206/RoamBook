@@ -1,0 +1,82 @@
+.tours {
+  //   border: 1px solid red;
+  @include flex-layout(row, center, center);
+  flex-wrap: wrap;
+  gap: $md;
+}
+.tour-block {
+  line-height: 1;
+  padding: $xs;
+  border-radius: 10px;
+  @include flex-layout(column, center, flex-start);
+  gap: $sm;
+  overflow: hidden;
+  border: 1px solid $divider-color;
+  box-shadow: $box-shadow;
+  .tour-block-image {
+    position: relative;
+    img {
+      border-radius: 5px;
+      display: block;
+      width: 300px;
+    }
+    .tour-location-float {
+      font-weight: 600;
+      border-radius: 5px;
+      @include flex-layout(row, center, center);
+      gap: $xs;
+      background-color: $bg-color;
+      position: absolute;
+      top: $sm;
+      left: $sm;
+      padding: $sm;
+    }
+    .tour-duration-float {
+      font-weight: 600;
+      border-radius: 5px;
+      @include flex-layout(row, center, center);
+      gap: $xs;
+      background-color: $bg-color;
+      position: absolute;
+      top: $sm;
+      right: $sm;
+      padding: $sm;
+    }
+  }
+  transition: box-shadow 0.2s ease-in-out;
+  &:hover {
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: $box-shadow-hover;
+  }
+}
+.tour-block-body {
+  padding: $sm;
+  width: 100%;
+  @include flex-layout(column, center, flex-start);
+  gap: $sm;
+  .tour-block-info {
+    border-top: 1px solid $divider-color;
+    border-bottom: 1px solid $divider-color;
+    padding: $md 0;
+    width: 100%;
+    @include flex-layout(row, space-between, center);
+    .tour-block-spot {
+      @include flex-layout(row, center, center);
+    }
+  }
+  .tour-block-title {
+    font-weight: 700;
+  }
+  .tour-block-price {
+    font-weight: 500;
+  }
+  .tour-block-desc {
+    max-width: calc(300px - $sm * 2);
+    font-weight: 200;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}

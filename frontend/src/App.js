@@ -1,7 +1,7 @@
-import { BrowserRouter, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Pane from "./components/Pane/Pane";
+import Home from "./pages/Home/Home";
+import Tours from "./pages/Tours/Tours";
 
 function App() {
   return (
@@ -9,8 +9,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <div className="App">
-          <Hero />
-          <Pane title={"Latest Tour's"} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tours" element={<Tours />} />
+          </Routes>
         </div>
       </BrowserRouter>
     </div>

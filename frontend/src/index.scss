@@ -3,15 +3,14 @@
 @import "./components/Hero/Hero"; //to be moved to home
 @import "./components/Pane/Pane";
 @import "./components/TourCard/TourCard";
+
+//pages
 @import "./pages/Home/Home";
+@import "./pages/Tours/Tours";
 .App-container {
   height: 100%;
   width: 100%;
   .App {
-    display: flex;
-    flex-direction: column;
-    gap: $lg;
-
     z-index: 1;
     width: 90%;
     height: 100%;
