@@ -3,6 +3,7 @@ import Hero from "../../components/Hero/Hero";
 import Pane from "../../components/Pane/Pane";
 import TourCard from "../../components/TourCard/TourCard";
 import { useToursContext } from "../../hooks/useToursContext";
+
 function Home() {
   const { tours } = useToursContext();
   const [tourComponent, setTourComponent] = useState();
@@ -18,7 +19,7 @@ function Home() {
 
     setTourComponent(comp);
   }, [tours]);
-  
+
   return (
     <div className="home-container">
       <div className="home">

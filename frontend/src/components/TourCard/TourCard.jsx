@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+
 function TourCard(props) {
   const nav = useNavigate();
   const { tour } = props;
@@ -9,7 +10,17 @@ function TourCard(props) {
   return (
     <div className="tour-card-container">
       <div className="tour-card">
-        <div className="tour-card-image">
+        <div
+          className="tour-card-image"
+          onMouseEnter={(e) => {
+            e.target.style.animation = "flip 0.5s ease-in-out";
+            e.target.src = tour.images[0];
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.animation = "flipBack 0.5s ease-in-out";
+            e.target.src = tour.images[1];
+          }}
+        >
           <span
             className="tour-detail-button"
             onClick={() => nav(`/tours/${tour._id}`)}

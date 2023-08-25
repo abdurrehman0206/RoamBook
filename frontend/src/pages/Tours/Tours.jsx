@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useToursContext } from "../../hooks/useToursContext";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { BiCurrentLocation } from "react-icons/bi";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css/bundle";
 function Tours() {
   const nav = useNavigate();
   const { tours } = useToursContext();
-  console.log("🚀 ~ file: Tours.jsx:5 ~ Tours ~ tours:", tours);
 
   if (!tours) {
     return;
@@ -24,7 +25,22 @@ function Tours() {
               <small className="tour-duration-float c-ac2 ">
                 <FaClock /> {tour.duration} days
               </small>
-              <img src={tour.images[0]} alt="" />
+              <div className="tour-block-image-slider">
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  pagination={{ clickable: true }}
+                >
+                  <SwiperSlide>
+                    <img src={tour?.images[0]} alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={tour?.images[1]} alt="" />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+              {/* <img src={tour.images[0]} alt="" /> */}
             </div>
             <div className="tour-block-body">
               <div className="tour-block-title">{tour.title}</div>

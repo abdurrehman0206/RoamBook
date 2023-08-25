@@ -1,0 +1,110 @@
+.tour-container {
+  //   border: 1px solid red;
+  .back-icon {
+    font-size: $xl;
+    box-shadow: $box-shadow;
+    margin: $lg 0;
+    &:hover {
+      box-shadow: $box-shadow-hover;
+    }
+  }
+}
+
+.tour {
+}
+.tour-top {
+  @include flex-layout(row, space-between, flex-start);
+  gap: $sm;
+  @include device(mobile) {
+    @include flex-layout(column-reverse, space-between, flex-start);
+  }
+}
+.tour-top-right {
+  img {
+    display: block;
+    width: 400px;
+    border-radius: 5px;
+  }
+  @include device(mobile) {
+    img {
+      width: 100%;
+    }
+  }
+}
+.tour-top-left-header {
+  @include flex-layout(row, space-between, center);
+}
+.single-tour-title {
+  font-size: $xxl;
+  font-weight: 700;
+}
+// .single-tour-destination {
+//   @include flex-layout(row, flex-start, center);
+//   gap: $xs;
+//   font-size: 0.85rem;
+//   font-weight: 500;
+// }
+.single-tour-rating {
+  font-size: 0.85rem;
+  @include flex-layout(row, flex-start, center);
+  .stars {
+    color: $theme-accent2;
+    @include flex-layout(row, center, center);
+  }
+  .ratings-number {
+    font-weight: 500;
+  }
+}
+.single-tour-desc {
+  margin: $lg 0;
+  font-weight: 300;
+}
+.single-tour-price {
+  font-weight: 600;
+}
+.tour-itinerary {
+  .itinerary-item {
+    padding: $sm 0;
+    @include flex-layout(row, flex-start, center);
+    gap: $lg;
+    .day-bullet {
+      @include flex-layout(row, center, center);
+      width: 20px;
+      height: 20px;
+      font-size: $md;
+      padding: $xs;
+      border-radius: 50%;
+      font-weight: 700;
+      color: $theme-accent1;
+      border: 2px solid $theme-accent1;
+      &:hover {
+        background-color: $theme-accent1;
+        color: $bg-color;
+        & ~ .day-desc {
+          font-weight: 500;
+        }
+      }
+    }
+    .day-num {
+      font-weight: 500;
+    }
+  }
+  :nth-child(n):not(:last-child) {
+    &.itinerary-item {
+      .day-bullet {
+        z-index: 10;
+        position: relative;
+        &::after {
+          z-index: 9;
+          position: absolute;
+          content: "";
+          height: 20px;
+          width: 2px;
+          background-color: $divider-color;
+          background-color: $theme-accent1;
+          bottom: -20px;
+        }
+      }
+    }
+  }
+}
