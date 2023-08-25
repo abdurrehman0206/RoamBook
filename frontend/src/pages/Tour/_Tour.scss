@@ -1,9 +1,12 @@
 .tour-container {
+  width: 90%;
+  margin: 0 auto;
   //   border: 1px solid red;
   .back-icon {
     font-size: $xl;
     box-shadow: $box-shadow;
     margin: $lg 0;
+    border-radius: 50%;
     &:hover {
       box-shadow: $box-shadow-hover;
     }
@@ -13,37 +16,76 @@
 .tour {
 }
 .tour-top {
-  @include flex-layout(row, space-between, flex-start);
+  @include flex-layout(row, flex-start, flex-start);
   gap: $sm;
   @include device(mobile) {
-    @include flex-layout(column-reverse, space-between, flex-start);
+    @include flex-layout(column, space-between, flex-start);
   }
+  position: relative;
 }
-.tour-top-right {
+.tour-top-left {
+  flex-basis: 100%;
   img {
     display: block;
-    width: 400px;
-    border-radius: 5px;
+
+    width: 450px;
+    height: calc(373px + $sm * 2);
+    object-fit: cover;
+    object-position: 0% 0%;
+    width: 100%;
+
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+    &:hover {
+      box-shadow: $box-shadow-hover;
+    }
   }
   @include device(mobile) {
     img {
       width: 100%;
+      height: auto;
     }
   }
 }
-.tour-top-left-header {
-  @include flex-layout(row, space-between, center);
+.tour-top-right {
+  //   flex-basis: 30%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: $sm;
+  .image-gitem {
+    img {
+      border-radius: 10px;
+      display: block;
+      width: 100%;
+      box-shadow: $box-shadow;
+      &:hover {
+        box-shadow: $box-shadow-hover;
+      }
+    }
+    @include device(mobile) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.tour-header {
+  margin-bottom: $lg;
+}
+.tour-top-header {
+  @include flex-layout(row, flex-start, center);
+  gap: $sm;
 }
 .single-tour-title {
   font-size: $xxl;
   font-weight: 700;
 }
-// .single-tour-destination {
-//   @include flex-layout(row, flex-start, center);
-//   gap: $xs;
-//   font-size: 0.85rem;
-//   font-weight: 500;
-// }
+.single-tour-destination {
+  @include flex-layout(row, flex-start, center);
+  gap: $xs;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
 .single-tour-rating {
   font-size: 0.85rem;
   @include flex-layout(row, flex-start, center);
@@ -56,18 +98,22 @@
   }
 }
 .single-tour-desc {
-  margin: $lg 0;
+  margin-bottom: $lg;
   font-weight: 300;
 }
 .single-tour-price {
   font-weight: 600;
 }
 .tour-itinerary {
+  @include flex-layout(column, flex-start, flex-start);
+
   .itinerary-item {
     padding: $sm 0;
     @include flex-layout(row, flex-start, center);
     gap: $lg;
     .day-bullet {
+      background-color: $bg-color;
+      z-index: 10;
       @include flex-layout(row, center, center);
       width: 20px;
       height: 20px;
@@ -75,14 +121,17 @@
       padding: $xs;
       border-radius: 50%;
       font-weight: 700;
-      color: $theme-accent1;
-      border: 2px solid $theme-accent1;
+      color: $theme-accent2;
+      border: 2px solid $theme-accent2;
       &:hover {
-        background-color: $theme-accent1;
+        background-color: $theme-accent2;
         color: $bg-color;
         & ~ .day-desc {
           font-weight: 500;
         }
+      }
+      &::after {
+        z-index: 9;
       }
     }
     .day-num {
@@ -92,18 +141,112 @@
   :nth-child(n):not(:last-child) {
     &.itinerary-item {
       .day-bullet {
-        z-index: 10;
         position: relative;
         &::after {
           z-index: 9;
           position: absolute;
           content: "";
-          height: 20px;
+          height: 38px;
           width: 2px;
           background-color: $divider-color;
-          background-color: $theme-accent1;
-          bottom: -20px;
+          background-color: $theme-accent2;
+          bottom: -38px;
         }
+      }
+    }
+  }
+}
+.tour--info {
+  // width: 100%;
+  flex-basis: 50%;
+  @include flex-layout(column, center, flex-start);
+  gap: $lg;
+  div {
+    width: 100%;
+    // padding: $sm 0;
+    @include flex-layout(row, flex-start, center);
+    gap: $sm;
+
+    span {
+      color: $theme-accent1;
+      flex-basis: 15%;
+      display: inline;
+      font-weight: 700;
+    }
+  }
+}
+.tour-main-info {
+  flex-basis: 50%;
+}
+.tour-bottom {
+  //   border: 1px solid red;
+  margin: $lg 0;
+  @include flex-layout(row, space-between, flex-start);
+  gap: $sm;
+  @include device(mobile) {
+    // width: 100%;
+    @include flex-layout(column, flex-start, flex-start);
+    gap: $sm;
+  }
+}
+.tour-booking {
+  right: $sm;
+  top: $sm;
+  position: absolute;
+  //   height: 100%;
+  // align-self: center;
+  border-radius: 10px;
+  padding: $sm $lg;
+  width: 300px;
+  background-color: $bg-color;
+  background-color: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(5px);
+  box-shadow: $box-shadow-hover;
+  h2 {
+    text-align: center;
+    color: $theme-accent1;
+    color: $bg-color;
+    margin-top: $md;
+    margin-bottom: $lg;
+  }
+  form {
+    @include flex-layout(column, flex-start, flex-start);
+    gap: $md;
+    margin-bottom: $md;
+    input {
+      border-bottom: 2px solid $theme-accent1;
+      width: 100%;
+      //   background-color: $bg-color;
+      padding: $md $lg;
+      //   border-radius: 10px;
+      font-size: $lg;
+      &::placeholder {
+        color: $theme-accent1;
+      }
+    }
+    button {
+      margin-top: $sm;
+      padding: $md $xxl;
+
+      align-self: center;
+      font-size: $lg;
+    }
+  }
+  @include device(mobile) {
+    width: 100%;
+    margin-top: $lg;
+    position: relative;
+    right: 0;
+    top: 0;
+    background-color: $bg-color;
+    h2 {
+      color: $theme-accent1;
+    }
+    input {
+      color: $text-color-dark;
+      &::placeholder {
+        color: $theme-accent1 !important;
+        opacity: 0.4;
       }
     }
   }

@@ -5,7 +5,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 const corsConfig = {
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    "http://192.168.100.30:3000",
+    "http://192.168.100.3:3000",
+  ],
   credentials: true,
   methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],

@@ -30,14 +30,15 @@ function Tours() {
                   modules={[Pagination]}
                   spaceBetween={20}
                   slidesPerView={1}
-                  pagination={{ clickable: true }}
+                  pagination={{ clickable: true, dynamicBullets: true }}
                 >
-                  <SwiperSlide>
-                    <img src={tour?.images[0]} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={tour?.images[1]} alt="" />
-                  </SwiperSlide>
+                  {tour.images.map((image, i) => {
+                    return (
+                      <SwiperSlide>
+                        <img src={tour?.images[i]} alt="" />
+                      </SwiperSlide>
+                    );
+                  })}
                 </Swiper>
               </div>
               {/* <img src={tour.images[0]} alt="" /> */}

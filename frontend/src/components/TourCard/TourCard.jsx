@@ -13,12 +13,16 @@ function TourCard(props) {
         <div
           className="tour-card-image"
           onMouseEnter={(e) => {
-            e.target.style.animation = "flip 0.5s ease-in-out";
-            e.target.src = tour.images[0];
+            if (e.target.id === "tour-image") {
+              e.target.style.animation = "flip 0.5s ease-in-out";
+              e.target.src = tour.images[0];
+            }
           }}
           onMouseLeave={(e) => {
-            e.target.style.animation = "flipBack 0.5s ease-in-out";
-            e.target.src = tour.images[1];
+            if (e.target.id === "tour-image") {
+              e.target.style.animation = "flipBack 0.5s ease-in-out";
+              e.target.src = tour.images[1];
+            }
           }}
         >
           <span
@@ -32,7 +36,7 @@ function TourCard(props) {
             <FaLocationDot />
             {tour.destination}
           </small>
-          <img src={tour.images[1]} alt="" />
+          <img src={tour.images[1]} alt="" id="tour-image" />
           <div className="tour-card-body">
             <div className="tour-title">
               <h4>{tour.title}</h4>

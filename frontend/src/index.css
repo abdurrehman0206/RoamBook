@@ -49,7 +49,7 @@ body {
 }
 
 .c-ac1 {
-  color: #00ADB5;
+  color: #0081b4;
 }
 
 .c-ac2 {
@@ -61,7 +61,7 @@ body {
 }
 
 .bg-ac1 {
-  background-color: #00ADB5;
+  background-color: #0081b4;
 }
 
 .bg-ac2 {
@@ -73,7 +73,7 @@ body {
 }
 
 .border-ac1 {
-  border: 1px solid #00ADB5;
+  border: 1px solid #0081b4;
 }
 
 .border-ac2 {
@@ -87,7 +87,7 @@ body {
 .btn-primary {
   white-space: nowrap;
   color: #f9f5f6;
-  background-color: #00ADB5;
+  background-color: #0081b4;
   padding: 0.5rem 1rem;
   font-weight: 700;
   border-radius: 20px;
@@ -99,16 +99,16 @@ body {
   .btn-primary:active {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #00ADB5;
-    color: #00ADB5;
+    border: 1px solid #0081b4;
+    color: #0081b4;
   }
 }
 @media (hover: hover) {
   .btn-primary:hover {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #00ADB5;
-    color: #00ADB5;
+    border: 1px solid #0081b4;
+    color: #0081b4;
   }
 }
 
@@ -119,16 +119,16 @@ body {
   font-weight: 700;
   border-radius: 20px;
   background-color: transparent;
-  border: 1px solid #00ADB5;
+  border: 1px solid #0081b4;
   transition: all 0.2s ease-in;
-  color: #00ADB5;
+  color: #0081b4;
 }
 @media (hover: none) {
   .btn-outline:active {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #00ADB5;
+    background-color: #0081b4;
   }
 }
 @media (hover: hover) {
@@ -136,7 +136,7 @@ body {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #00ADB5;
+    background-color: #0081b4;
   }
 }
 
@@ -144,7 +144,7 @@ body {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   color: #f9f5f6;
-  background-color: #00ADB5;
+  background-color: #0081b4;
   padding: 0.5rem 1rem;
   font-weight: 700;
   border-radius: 5px;
@@ -155,16 +155,16 @@ body {
   .btn-box-primary:active {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #00ADB5;
-    color: #00ADB5;
+    border: 1px solid #0081b4;
+    color: #0081b4;
   }
 }
 @media (hover: hover) {
   .btn-box-primary:hover {
     transition: all 0.2s ease-out;
     background-color: transparent;
-    border: 1px solid #00ADB5;
-    color: #00ADB5;
+    border: 1px solid #0081b4;
+    color: #0081b4;
   }
 }
 
@@ -175,16 +175,16 @@ body {
   font-weight: 700;
   border-radius: 5px;
   background-color: transparent;
-  border: 1px solid #00ADB5;
+  border: 1px solid #0081b4;
   transition: all 0.2s ease-in;
-  color: #00ADB5;
+  color: #0081b4;
 }
 @media (hover: none) {
   .btn-box-outline:active {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #00ADB5;
+    background-color: #0081b4;
   }
 }
 @media (hover: hover) {
@@ -192,7 +192,7 @@ body {
     border: 1px solid transparent;
     transition: all 0.2s ease-out;
     color: #f9f5f6;
-    background-color: #00ADB5;
+    background-color: #0081b4;
   }
 }
 
@@ -210,7 +210,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
-  box-shadow: 0 1px 5px -1px #00ADB5;
+  box-shadow: 0 1px 5px -1px #0081b4;
 }
 @media (max-width: 767px) {
   .navbar {
@@ -246,11 +246,11 @@ body {
 }
 .navbar-links a:hover {
   text-decoration: underline;
-  color: #00ADB5;
+  color: #0081b4;
 }
 .navbar-links a.active {
   text-decoration: none;
-  background-color: #00ADB5;
+  background-color: #0081b4;
   color: #f9f5f6;
 }
 @media (max-width: 767px) {
@@ -399,7 +399,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: #00ADB5;
+  color: #0081b4;
   border-radius: 50%;
   background-color: #f9f5f6;
   box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
@@ -583,13 +583,18 @@ body {
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #00ADB5 !important;
+  background-color: #0081b4 !important;
 }
 
+.tour-container {
+  width: 90%;
+  margin: 0 auto;
+}
 .tour-container .back-icon {
   font-size: 1.25rem;
   box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
   margin: 1rem 0;
+  border-radius: 50%;
 }
 .tour-container .back-icon:hover {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
@@ -598,40 +603,90 @@ body {
 .tour-top {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 0.5rem;
+  position: relative;
 }
 @media (max-width: 767px) {
   .tour-top {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
   }
 }
 
-.tour-top-right img {
+.tour-top-left {
+  flex-basis: 100%;
+}
+.tour-top-left img {
   display: block;
-  width: 400px;
-  border-radius: 5px;
+  width: 450px;
+  height: calc(373px + 1rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0% 0%;
+     object-position: 0% 0%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.tour-top-left img:hover {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 767px) {
-  .tour-top-right img {
+  .tour-top-left img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.tour-top-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+.tour-top-right .image-gitem img {
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.tour-top-right .image-gitem img:hover {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 767px) {
+  .tour-top-right .image-gitem img {
     width: 100%;
   }
 }
 
-.tour-top-left-header {
+.tour-header {
+  margin-bottom: 1rem;
+}
+
+.tour-top-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .single-tour-title {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.single-tour-destination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .single-tour-rating {
@@ -653,7 +708,7 @@ body {
 }
 
 .single-tour-desc {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   font-weight: 300;
 }
 
@@ -661,6 +716,12 @@ body {
   font-weight: 600;
 }
 
+.tour-itinerary {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 .tour-itinerary .itinerary-item {
   padding: 0.5rem 0;
   display: flex;
@@ -670,6 +731,8 @@ body {
   gap: 1rem;
 }
 .tour-itinerary .itinerary-item .day-bullet {
+  background-color: #f9f5f6;
+  z-index: 10;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -680,32 +743,150 @@ body {
   padding: 0.25rem;
   border-radius: 50%;
   font-weight: 700;
-  color: #00ADB5;
-  border: 2px solid #00ADB5;
+  color: #ff0060;
+  border: 2px solid #ff0060;
 }
 .tour-itinerary .itinerary-item .day-bullet:hover {
-  background-color: #00ADB5;
+  background-color: #ff0060;
   color: #f9f5f6;
 }
 .tour-itinerary .itinerary-item .day-bullet:hover ~ .day-desc {
   font-weight: 500;
 }
+.tour-itinerary .itinerary-item .day-bullet::after {
+  z-index: 9;
+}
 .tour-itinerary .itinerary-item .day-num {
   font-weight: 500;
 }
 .tour-itinerary :nth-child(n):not(:last-child).itinerary-item .day-bullet {
-  z-index: 10;
   position: relative;
 }
 .tour-itinerary :nth-child(n):not(:last-child).itinerary-item .day-bullet::after {
   z-index: 9;
   position: absolute;
   content: "";
-  height: 20px;
+  height: 38px;
   width: 2px;
   background-color: #ece8dd;
-  background-color: #00ADB5;
-  bottom: -20px;
+  background-color: #ff0060;
+  bottom: -38px;
+}
+
+.tour--info {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.tour--info div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tour--info div span {
+  color: #0081b4;
+  flex-basis: 15%;
+  display: inline;
+  font-weight: 700;
+}
+
+.tour-main-info {
+  flex-basis: 50%;
+}
+
+.tour-bottom {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+@media (max-width: 767px) {
+  .tour-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.tour-booking {
+  right: 0.5rem;
+  top: 0.5rem;
+  position: absolute;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  width: 300px;
+  background-color: #f9f5f6;
+  background-color: rgba(0, 0, 0, 0.26);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+.tour-booking h2 {
+  text-align: center;
+  color: #0081b4;
+  color: #f9f5f6;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+.tour-booking form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.tour-booking form input {
+  border-bottom: 2px solid #0081b4;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+.tour-booking form input::-moz-placeholder {
+  color: #0081b4;
+}
+.tour-booking form input::placeholder {
+  color: #0081b4;
+}
+.tour-booking form button {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  align-self: center;
+  font-size: 1rem;
+}
+@media (max-width: 767px) {
+  .tour-booking {
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    right: 0;
+    top: 0;
+    background-color: #f9f5f6;
+  }
+  .tour-booking h2 {
+    color: #0081b4;
+  }
+  .tour-booking input {
+    color: #5c5470;
+  }
+  .tour-booking input::-moz-placeholder {
+    color: #0081b4 !important;
+    opacity: 0.4;
+  }
+  .tour-booking input::placeholder {
+    color: #0081b4 !important;
+    opacity: 0.4;
+  }
 }
 
 .App-container {

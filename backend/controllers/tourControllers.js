@@ -33,7 +33,7 @@ const postTour = async (req, res) => {
     title,
     description,
     destination,
-    duration: Math.floor(
+    duration: Math.ceil(
       (new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24)
     ),
     price,
