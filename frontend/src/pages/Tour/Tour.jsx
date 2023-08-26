@@ -3,11 +3,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
+import Booking from "../../components/Booking/Booking";
+import ReactStarsRating from "react-awesome-stars-rating";
 function Tour() {
   const nav = useNavigate();
   const { tourId } = useParams();
   const [singleTour, setSingleTour] = useState();
   const [loading, setLoading] = useState(false);
+  const [bookingActive, setBookingActive] = useState(false);
+
   useLayoutEffect(() => {
     if (!tourId) return;
     const fetchTourById = async () => {
@@ -37,12 +41,24 @@ function Tour() {
     };
     fetchTourById();
   }, [tourId]);
+  const deactivateBooking = () => {
+    setBookingActive(false);
+  };
+  const onChange = (value) => {
+    console.log(`React Stars Rating value is ${value}`);
+  };
   if (!singleTour) {
     return null;
   }
 
   return (
     <div className="tour-container">
+      {bookingActive && (
+        <Booking
+          deactivateBooking={() => deactivateBooking}
+          image={singleTour.images[1]}
+        />
+      )}
       <BsFillArrowLeftCircleFill
         className="c-ac1 back-icon"
         onClick={() => nav("/tours")}
@@ -51,16 +67,6 @@ function Tour() {
         <section className="tour-top">
           <div className="tour-top-left">
             <img src={singleTour.images[0]} alt="" />
-          </div>
-          <div className="tour-booking">
-            <h2>Book Now</h2>
-            <form>
-              <input type="text" placeholder="Name" />
-              <input type="email" placeholder="Email" />
-              <input type="text" placeholder="Phone Number" />
-              <input type="number" placeholder="No. of tickets" />
-              <button className="btn-primary"> Book</button>
-            </form>
           </div>
         </section>
         <section className="tour-bottom">
@@ -123,6 +129,14 @@ function Tour() {
               <div className="tour-price">
                 <span>Price</span>${singleTour.price}
               </div>
+              <button
+                className="btn-box-primary"
+                onClick={() => setBookingActive(true)}
+                disabled={bookingActive}
+              >
+                Book Now
+              </button>
+              <ReactStarsRating onChange={onChange} size={19} isHalf={false}  />
             </div>
           </section>
           <div className="tour-itinerary">
@@ -138,6 +152,7 @@ function Tour() {
 
           {/* Itin */}
         </section>
+        <h1 className="gallery-heading">Gallery</h1>
         <section className="tour-bottom">
           <div className="tour-top-right">
             {singleTour.images.slice(0, 4).map((image, i) => {
@@ -149,6 +164,17 @@ function Tour() {
             })}
           </div>
         </section>
+        {/* <div className="tour-itinerary-test">
+                <span className="line"></span>
+          {singleTour.itinerary.map((day) => {
+            return (
+              <div key={day.day} className="itinerary-item">
+                <span className="day-bullet">{day.day}</span>
+                <span className="day-desc">{day.description}</span>
+              </div>
+            );
+          })}
+        </div> */}
       </div>
     </div>
   );

@@ -68,6 +68,9 @@
       }
     }
   }
+  @include device(mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .tour-header {
   margin-bottom: $lg;
@@ -79,6 +82,7 @@
 .single-tour-title {
   font-size: $xxl;
   font-weight: 700;
+  color: $theme-accent1;
 }
 .single-tour-destination {
   @include flex-layout(row, flex-start, center);
@@ -113,6 +117,7 @@
     gap: $lg;
     .day-bullet {
       background-color: $bg-color;
+      // background-color: #082032;
       z-index: 10;
       @include flex-layout(row, center, center);
       width: 20px;
@@ -169,7 +174,7 @@
 
     span {
       color: $theme-accent1;
-      flex-basis: 15%;
+      flex-basis: 25%;
       display: inline;
       font-weight: 700;
     }
@@ -250,4 +255,120 @@
       }
     }
   }
+}
+// .tour-itinerary-test {
+//   height: 200px;
+//   @include flex-layout(row, space-between, center);
+//   gap: $xxl;
+//   .itinerary-item {
+//     position: relative;
+//     padding: $sm 0;
+//     background-color: $bg-color;
+//     @include flex-layout(column, flex-start, center);
+//     gap: $lg;
+//     .day-bullet {
+//       background-color: $bg-color;
+
+//       @include flex-layout(row, center, center);
+//       width: 20px;
+//       height: 20px;
+//       font-size: $md;
+//       padding: $xs;
+//       border-radius: 50%;
+//       font-weight: 700;
+//       color: $theme-accent2;
+//       border: 2px solid $theme-accent2;
+//       &:hover {
+//         background-color: $theme-accent2;
+//         color: $bg-color;
+//         & ~ .day-desc {
+//           font-weight: 500;
+//         }
+//       }
+//       &::after {
+//         z-index: 9;
+//       }
+//     }
+//     .day-num {
+//       font-weight: 500;
+//     }
+//   }
+//   :nth-child(odd) {
+//     &.itinerary-item {
+//       // @include flex-layout(column, flex-start, center);
+//       .day-bullet {
+//         background-color: $bg-color;
+//         z-index: 99;
+//       }
+//       .day-desc {
+//         display: -webkit-box;
+//         -webkit-line-clamp: 3;
+//         -webkit-box-orient: vertical;
+//         overflow: none;
+//         height: 4lh;
+//         border-radius: 10px;
+//         min-width: 100px;
+//         position: absolute;
+//         border: 2px solid $theme-accent2;
+//         text-align: center;
+//         box-shadow: $box-shadow-hover;
+//         padding: $sm $lg;
+//         bottom: -80px;
+//         &::after {
+//           content: "";
+//           height: 20px;
+//           width: 2px;
+//           background-color: $theme-accent2;
+//           position: absolute;
+//           top: -20px;
+//           left: 50%;
+//           transform: translateX(-50%);
+//         }
+//       }
+//     }
+//   }
+//   :nth-child(even) {
+//     &.itinerary-item {
+//       // @include flex-layout(column-reverse, flex-start, center);
+//       .day-bullet {
+//         background-color: $bg-color;
+//         z-index: 99;
+//       }
+//       .day-desc {
+//         display: -webkit-box;
+//         -webkit-line-clamp: 3;
+//         -webkit-box-orient: vertical;
+//         overflow: none;
+//         height: 4lh;
+//         border-radius: 10px;
+//         min-width: 100px;
+//         position: absolute;
+//         border: 2px solid $theme-accent2;
+//         text-align: center;
+//         box-shadow: $box-shadow-hover;
+//         padding: $sm $lg;
+//         top: -80px;
+//         &::after {
+//           content: "";
+//           height: 20px;
+//           width: 2px;
+//           background-color: $theme-accent2;
+//           position: absolute;
+//           bottom: -20px;
+//           left: 50%;
+//           transform: translateX(-50%);
+//         }
+//       }
+//     }
+//   }
+//   .line {
+//     position: absolute;
+//     width: 80%;
+//     height: 2px;
+//     background-color: $theme-accent2;
+//   }
+// }
+.gallery-heading {
+  font-size: $xxl;
+  color: $theme-accent1;
 }

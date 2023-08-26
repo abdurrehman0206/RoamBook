@@ -34,8 +34,8 @@ function Tours() {
                 >
                   {tour.images.map((image, i) => {
                     return (
-                      <SwiperSlide>
-                        <img src={tour?.images[i]} alt="" />
+                      <SwiperSlide key={i}>
+                        <img src={image} alt="" />
                       </SwiperSlide>
                     );
                   })}
