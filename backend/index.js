@@ -9,7 +9,7 @@ const corsConfig = {
     "http://localhost:3000",
     "http://192.168.100.30:3000",
     "http://192.168.100.3:3000",
-    "https://travel-booking-api.vercel.app/",
+    "https://roambook.vercel.app",
   ],
   credentials: true,
   methods: ["GET", "POST", "HEAD", "PUT", "PATCH", "DELETE"],
