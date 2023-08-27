@@ -4,10 +4,13 @@
   position: relative;
   overflow-y: scroll; //   border: 1px solid red;
   max-height: calc(100vh - 175px);
-  min-height: 550px;
+  min-height: 520px;
   @include flex-layout(row, center, center);
   flex-wrap: wrap;
   gap: $md;
+  @include device(mobile) {
+    max-height: calc(100vh - 200px);
+  }
 }
 .tour-block {
   line-height: 1;

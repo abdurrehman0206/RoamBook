@@ -1,7 +1,5 @@
 .booking-container {
-  
   z-index: 9999;
-
   position: fixed;
   width: 100%;
   top: 0;
@@ -30,6 +28,12 @@
   border-radius: calc(10px + $sm) 70px 10px calc(70px + $sm);
   //   border: 2px solid $theme-accent1;
   overflow: hidden;
+  @include device(mobile) {
+    img {
+      display: none;
+    }
+    border-radius: 5px;
+  }
 }
 .booking {
   width: 400px;
@@ -66,5 +70,4 @@
       flex-basis: 100%;
     }
   }
-  
 }

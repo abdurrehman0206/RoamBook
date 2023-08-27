@@ -506,6 +506,14 @@ body {
   border-radius: 5px 75px 75px 5px;
   border-radius: 10px 70px 10px 70px;
 }
+@media (max-width: 767px) {
+  .const {
+    border-radius: 5px;
+  }
+  .const img {
+    display: none;
+  }
+}
 
 .booking {
   width: 400px;
@@ -592,13 +600,18 @@ body {
   position: relative;
   overflow-y: scroll;
   max-height: calc(100vh - 175px);
-  min-height: 550px;
+  min-height: 520px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+@media (max-width: 767px) {
+  .tours {
+    max-height: calc(100vh - 200px);
+  }
 }
 
 .tour-block {
@@ -728,6 +741,7 @@ body {
 @media (max-width: 767px) {
   .tour-container {
     max-height: calc(100vh - 200px);
+    width: 100%;
   }
 }
 
@@ -1072,8 +1086,13 @@ body {
     box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
   }
   .login .image-container {
+    border: 1px solid red;
+    width: 100%;
     box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
     border-radius: 10px 10px 50px 50px;
+  }
+  .login .image-container img {
+    height: 250px;
   }
 }
 
@@ -1103,6 +1122,7 @@ body {
   font-size: 1rem;
 }
 .auth-form small {
+  text-align: center;
   margin-bottom: 1rem;
 }
 .auth-form small a {
