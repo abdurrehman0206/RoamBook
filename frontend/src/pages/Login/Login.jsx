@@ -3,7 +3,7 @@ import login_image from "../../assets/login-page.jpg";
 import { NavLink } from "react-router-dom";
 import { useLogin } from "../../hooks/useLogin";
 function Login() {
-  const { login } = useLogin();
+  const { login, loading } = useLogin();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -52,8 +52,12 @@ function Login() {
               onChange={handleChange}
             />
           </div>
-          <button className="btn-primary" onClick={handleLogin}>
-            Login
+          <button
+            className="btn-primary"
+            onClick={handleLogin}
+            disabled={loading}
+          >
+            {loading ? "Logging In" : "Login"}
           </button>
           <small>
             New to RoamBook? <NavLink to="/signup">Join</NavLink> us today and

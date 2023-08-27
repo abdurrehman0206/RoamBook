@@ -3,7 +3,7 @@ import signup_image from "../../assets/Signup.jpeg";
 import { NavLink } from "react-router-dom";
 import { useSignup } from "../../hooks/useSignup";
 function Signup() {
-  const { signup } = useSignup();
+  const { signup, loading } = useSignup();
   const [image, setImage] = useState(null);
   const [user, setUser] = useState({
     email: "",
@@ -90,8 +90,12 @@ function Signup() {
               onChange={(e) => setImage(e.target.files[0])}
             />
           </div>
-          <button className="btn-primary" onClick={handleSignup}>
-            Signup
+          <button
+            className="btn-primary"
+            onClick={handleSignup}
+            disabled={loading}
+          >
+            {loading ? "Signing Up" : "Signup"}
           </button>
           <small>
             Already a RoamBooker? Glide in by{" "}
