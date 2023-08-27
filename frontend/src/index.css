@@ -589,6 +589,10 @@ body {
 }
 
 .tours {
+  position: relative;
+  overflow-y: scroll;
+  max-height: calc(100vh - 175px);
+  min-height: 550px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -707,6 +711,8 @@ body {
 }
 
 .tour-container {
+  overflow-y: scroll;
+  max-height: calc(100vh - 175px);
   width: 90%;
   margin: 0 auto;
 }
@@ -718,6 +724,11 @@ body {
 }
 .tour-container .back-icon:hover {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 767px) {
+  .tour-container {
+    max-height: calc(100vh - 200px);
+  }
 }
 
 .tour-top {
@@ -1109,7 +1120,6 @@ body {
 .App-container .App {
   z-index: 1;
   width: 90%;
-  height: 100%;
   max-width: 1200px;
   padding: 1rem;
   margin: 0 auto;

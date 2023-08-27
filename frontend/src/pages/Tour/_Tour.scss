@@ -1,4 +1,6 @@
 .tour-container {
+  overflow-y: scroll;
+  max-height: calc(100vh - 175px);
   width: 90%;
   margin: 0 auto;
   //   border: 1px solid red;
@@ -10,6 +12,9 @@
     &:hover {
       box-shadow: $box-shadow-hover;
     }
+  }
+  @include device(mobile) {
+    max-height: calc(100vh - 200px);
   }
 }
 

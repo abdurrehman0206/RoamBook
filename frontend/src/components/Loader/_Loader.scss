@@ -1,5 +1,6 @@
 .loader-container {
   height: calc(100vh - 120px);
+
   @include flex-layout(row, center, center);
 }
 .loader {
