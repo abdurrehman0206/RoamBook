@@ -1,4 +1,6 @@
 .login {
+  max-width: 800px;
+  margin: 0 auto;
   box-shadow: 20px 0px 25px -5px #000, 8px 0px 10px -6px #000;
   @include flex-layout(row, center, center);
   border-radius: 10px;
