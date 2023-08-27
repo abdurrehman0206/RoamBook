@@ -621,7 +621,7 @@ body {
 .tours {
   position: relative;
   overflow-y: scroll;
-  max-height: calc(100vh - 175px);
+  max-height: calc(100vh - 105px);
   min-height: 520px;
   display: flex;
   flex-direction: row;

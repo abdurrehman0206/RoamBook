@@ -1,9 +1,10 @@
-.tour-container {
+.tours-container {
 }
+
 .tours {
   position: relative;
   overflow-y: scroll; //   border: 1px solid red;
-  max-height: calc(100vh - 175px);
+  max-height: calc(100vh - 105px);
   min-height: 520px;
   @include flex-layout(row, center, center);
   flex-wrap: wrap;
