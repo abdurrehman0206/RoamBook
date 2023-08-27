@@ -28,7 +28,6 @@
     width: 100%;
     @include flex-layout(column, center, center);
     .image-container {
-      border: 1px solid red;
       width: 100%;
       box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
       border-radius: 10px 10px 50px 50px;
