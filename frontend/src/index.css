@@ -631,14 +631,39 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  gap: 1rem;
+  width: calc(80% + 1rem);
 }
 .tours-actions input {
-  width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   border: 1px solid #ff4c29;
   color: #f9f5f6;
+}
+@media (max-width: 767px) {
+  .tours-actions {
+    width: 100%;
+    input-width: 100%;
+  }
+}
+.tours-actions .sort-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tours-actions .sort-action input {
+  padding: 0;
+  border: none;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.tours-actions .sort-action input:hover {
+  color: #ff4c29;
 }
 
 .tours {

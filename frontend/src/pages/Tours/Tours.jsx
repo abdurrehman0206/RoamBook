@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToursContext } from "../../hooks/useToursContext";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
@@ -10,6 +10,9 @@ function Tours() {
   const nav = useNavigate();
   const { tours } = useToursContext();
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortTerm, setSortTerm] = useState("");
+  const daysRef = useRef();
+  const priceRef = useRef();
   if (!tours) {
     return;
   }
@@ -24,9 +27,50 @@ function Tours() {
   } else {
     newTours = tours;
   }
+  const handleSort = (e) => {
+    if (e.target.value === "Days") {
+      daysRef.current.style.color = "#ff4c29";
+      priceRef.current.style.color = "#f9f5f6";
+      setSortTerm(e.target.value);
+    } else if (e.target.value === "Price") {
+      priceRef.current.style.color = "#ff4c29";
+      daysRef.current.style.color = "#f9f5f6";
+      setSortTerm(e.target.value);
+    } else if (e.target.value === "↺") {
+      priceRef.current.style.color = "#f9f5f6";
+      daysRef.current.style.color = "#f9f5f6";
+      setSortTerm("");
+    }
+
+    // reset all other sort terms styles
+  };
+  if (sortTerm === "Days") {
+    newTours = [...newTours].sort((a, b) => a.duration - b.duration);
+  } else if (sortTerm === "Price") {
+    newTours = [...newTours].sort((a, b) => a.price - b.price);
+  } else if (sortTerm === "↺") {
+    newTours = tours;
+  }
   return (
     <div className="tours-container">
       <div className="tours-actions">
+        <div className="sort-action">
+          <h4>Sort By</h4>
+          <input
+            onClick={handleSort}
+            value="Days"
+            type="button"
+            ref={daysRef}
+          />
+          <input
+            onClick={handleSort}
+            value="Price"
+            type="button"
+            ref={priceRef}
+          />
+          <input onClick={handleSort} value="↺" type="button" />
+          {/* <span onClick={handleSort} value='days'>Days</span> */}
+        </div>
         <input
           type="text"
           name="search"

@@ -4,16 +4,39 @@
 }
 .tours-actions {
   @include flex-layout(row, center, center);
-
-  width: 70%;
+  gap: $lg;
+  width: calc(80% + $sm * 2);
   input {
-    width: 100%;
+    // width: 100%;
     padding: $sm $lg;
     border-radius: 10px;
     border: 1px solid $theme-accent1;
     color: $text-color;
   }
+  @include device(mobile) {
+    width: 100%;
+
+    input : {
+      width: 100%;
+    }
+  }
+  .sort-action {
+    @include flex-layout(row, flex-start, center);
+    gap: $sm;
+    input {
+      padding: 0;
+      border: none;
+      width: max-content;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.85rem;
+      &:hover {
+        color: $theme-accent1;
+      }
+    }
+  }
 }
+
 .tours {
   position: relative;
   overflow-y: scroll; //   border: 1px solid red;
