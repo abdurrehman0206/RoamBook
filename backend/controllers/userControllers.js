@@ -51,7 +51,7 @@ const loginUser = async (req, res) => {
 };
 const signupUser = async (req, res) => {
   const { email, password, fullname, username, image } = req.body;
-  if ((!email, !password, !fullname, !username)) {
+  if (!email || !password || !fullname || !username) {
     return res.status(400).send({
       success: false,
       message: "Please fill in all the fields",

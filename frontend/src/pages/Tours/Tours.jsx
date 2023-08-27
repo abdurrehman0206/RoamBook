@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToursContext } from "../../hooks/useToursContext";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
@@ -9,14 +9,36 @@ import "swiper/css/bundle";
 function Tours() {
   const nav = useNavigate();
   const { tours } = useToursContext();
-
+  const [searchTerm, setSearchTerm] = useState("");
   if (!tours) {
     return;
   }
+  let newTours;
+  if (searchTerm) {
+    newTours = tours.filter((tour) =>
+      tour.destination
+        .split(",")[1]
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+    );
+  } else {
+    newTours = tours;
+  }
   return (
     <div className="tours-container">
+      <div className="tours-actions">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Location"
+          onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchTerm || ""}
+          autoComplete="off"
+        />
+      </div>
       <div className="tours">
-        {tours.map((tour) => (
+        {newTours.map((tour) => (
           <div key={tour._id} className="tour-block">
             <div className="tour-block-image">
               <small className="tour-location-float c-ac2 ">

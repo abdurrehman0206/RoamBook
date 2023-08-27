@@ -618,10 +618,33 @@ body {
   gap: 1rem;
 }
 
+.tours-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tours-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+.tours-actions input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ff4c29;
+  color: #f9f5f6;
+}
+
 .tours {
   position: relative;
   overflow-y: scroll;
-  max-height: calc(100vh - 105px);
+  max-height: calc(100vh - 175px);
   min-height: 520px;
   display: flex;
   flex-direction: row;
