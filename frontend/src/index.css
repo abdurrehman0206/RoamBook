@@ -269,6 +269,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
 }
 @media (max-width: 767px) {
   .hero {
@@ -305,6 +306,9 @@ body {
   .hero-left p {
     text-align: center;
   }
+}
+.hero-left button {
+  margin-top: 0.25rem;
 }
 
 .hero-right img {
@@ -482,6 +486,7 @@ body {
 
 .const {
   padding: 0.5rem;
+  box-shadow: 20px 0px 25px -5px #000, 8px 0px 10px -6px #000;
   border: 2px solid #ff4c29;
   display: flex;
   flex-direction: row;
@@ -544,14 +549,39 @@ body {
 .booking .booking-actions button {
   flex-basis: 100%;
 }
-.booking .close-icon {
-  color: #ff4c29;
-  font-size: 1.5rem;
-  position: absolute;
-  top: 0;
-  right: 0;
+
+.loader-container {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
+.loader .icon {
+  font-size: 1.5rem;
+  color: #ff4c29;
+  animation: aeroplane 3s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes aeroplane {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(150px);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-90deg) translateX(150px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-180deg) translateX(150px);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-270deg) translateX(150px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg) translateX(150px);
+  }
+}
 .home {
   display: flex;
   flex-direction: column;
@@ -988,6 +1018,88 @@ body {
 .gallery-heading {
   font-size: 1.5rem;
   color: #ff4c29;
+}
+
+.login {
+  box-shadow: 20px 0px 25px -5px #000, 8px 0px 10px -6px #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  gap: 1rem;
+}
+.login p {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.login p span {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.login .image-container {
+  border-radius: 10px 50px 50px 10px;
+  overflow: hidden;
+  flex-basis: 40%;
+  box-shadow: 20px 0px 25px -5px #000, 8px 0px 10px -6px #000;
+}
+.login .image-container img {
+  display: block;
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 767px) {
+  .login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
+  }
+  .login .image-container {
+    box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
+    border-radius: 10px 10px 50px 50px;
+  }
+}
+
+.auth-form {
+  height: 100%;
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+.auth-form .form-group {
+  width: 80%;
+  position: relative;
+}
+.auth-form .form-group input {
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(255, 77, 41, 0.368627451);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: #f9f5f6;
+}
+.auth-form button {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+.auth-form small {
+  margin-bottom: 1rem;
+}
+.auth-form small a {
+  font-weight: 600;
+  color: #ff4c29;
+}
+.auth-form small a:hover {
+  text-decoration: underline;
 }
 
 .App-container {

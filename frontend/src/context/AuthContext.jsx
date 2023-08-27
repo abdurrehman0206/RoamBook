@@ -29,6 +29,7 @@ export const AuthContextProvider = ({ children }) => {
         const response = await fetch(
           `${process.env.REACT_APP_BASE_URL}/api/users/verify`,
           {
+            method: "GET",
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${user.token}`,
@@ -43,6 +44,7 @@ export const AuthContextProvider = ({ children }) => {
           localStorage.removeItem("user");
           dispatch({ type: "LOGOUT" });
         }
+      } else {
       }
     };
     checkUser();

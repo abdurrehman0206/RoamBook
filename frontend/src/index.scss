@@ -5,10 +5,13 @@
 @import "./components/TourCard/TourCard";
 @import "./components/SearchCard/SearchCard";
 @import "./components/Booking/Booking";
+@import "./components/Loader/Loader";
 //pages
 @import "./pages/Home/Home";
 @import "./pages/Tours/Tours";
 @import "./pages/Tour/Tour";
+@import "./pages/Login/Login";
+
 .App-container {
   height: 100%;
   width: 100%;

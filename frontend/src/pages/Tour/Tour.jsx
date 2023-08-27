@@ -5,8 +5,11 @@ import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
 import Booking from "../../components/Booking/Booking";
 import ReactStarsRating from "react-awesome-stars-rating";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import Loader from "../../components/Loader/Loader";
 function Tour() {
   const nav = useNavigate();
+  const { user } = useAuthContext();
   const { tourId } = useParams();
   const [singleTour, setSingleTour] = useState();
   const [loading, setLoading] = useState(false);
@@ -23,7 +26,7 @@ function Tour() {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
-              // Authorization: `Bearer ${localStorage.getItem(token)}`,
+              Authorization: `Bearer ${user.token}`,
             },
           }
         );
@@ -40,14 +43,17 @@ function Tour() {
       }
     };
     fetchTourById();
-  }, [tourId]);
+  }, [tourId, user.token]);
   const deactivateBooking = () => {
     setBookingActive(false);
   };
   const onChange = (value) => {
     console.log(`React Stars Rating value is ${value}`);
   };
-  if (!singleTour) {
+  if (!singleTour && loading) {
+    return <Loader />;
+  }
+  if (!singleTour && !loading) {
     return null;
   }
 
@@ -136,7 +142,7 @@ function Tour() {
               >
                 Book Now
               </button>
-              <ReactStarsRating onChange={onChange} size={19} isHalf={false}  />
+              <ReactStarsRating onChange={onChange} size={19} isHalf={false} />
             </div>
           </section>
           <div className="tour-itinerary">

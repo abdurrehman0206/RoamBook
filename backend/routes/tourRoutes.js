@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const requireAuth = require("../middleware/requireAuth");
 const {
   getTours,
   getTour,
@@ -8,7 +9,7 @@ const {
   bookTour,
   rateTour,
 } = require("../controllers/tourControllers");
-
+router.use(requireAuth);
 router.get("/", getTours);
 router.get("/:id", getTour);
 router.post("/", postTour);

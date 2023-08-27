@@ -6,7 +6,6 @@ export const useLogin = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
   const login = async (email, password) => {
-    setError(null);
     setLoading(true);
     try {
       const response = await fetch(
@@ -32,7 +31,7 @@ export const useLogin = () => {
           type: "LOGIN",
           payload: json.user,
         });
-        localStorage.setItem("token", JSON.stringify(json.user.token));
+        localStorage.setItem("user", JSON.stringify(json.user));
       } else {
         toast.error(error);
         setLoading(false);

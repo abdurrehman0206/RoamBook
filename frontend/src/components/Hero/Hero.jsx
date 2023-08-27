@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "../../assets/hero-right.jpg";
 function Hero() {
+  const nav = useNavigate();
   return (
     <div className="hero-container">
       <div className="hero">
@@ -13,7 +15,9 @@ function Hero() {
             experiences tailored to your desires. Effortlessly plan and book
             your dream getaway with RoamBook. Your journey starts here.
           </p>
-          <button className="btn-box-primary">Explore</button>
+          <button className="btn-box-primary" onClick={() => nav("/tours")}>
+            Explore
+          </button>
         </div>
         <div className="hero-right">
           <img src={heroImage} alt="hero" />

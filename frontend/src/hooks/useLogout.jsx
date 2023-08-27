@@ -1,15 +1,15 @@
 import { useNavigate } from "react-router-dom";
-// import { useNFTContext } from "./useNFTContext";
+import { useToursContext } from "./useToursContext";
 import { useAuthContext } from "./useAuthContext";
 import { toast } from "react-toastify";
 export const useLogout = () => {
   const navigate = useNavigate();
 
-  // const nftContext = useNFTContext();
+  const toursContext = useToursContext();
   const authContext = useAuthContext();
   const logout = () => {
     localStorage.removeItem("user");
-    // nftContext.dispatch({ type: "CLEAR_NFTS" });
+    toursContext.dispatch({ type: "CLEAR_TOURS" });
     authContext.dispatch({ type: "LOGOUT" });
     toast.success("Logged out successfully");
     navigate("/login");

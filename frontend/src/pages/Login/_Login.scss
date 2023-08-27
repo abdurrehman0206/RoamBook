@@ -1,0 +1,71 @@
+.login {
+  box-shadow: 20px 0px 25px -5px #000, 8px 0px 10px -6px #000;
+  @include flex-layout(row, center, center);
+  border-radius: 10px;
+  gap: $lg;
+  p {
+    text-align: center;
+    font-size: $lg;
+    span {
+      font-weight: 700;
+      font-size: $xl;
+    }
+    margin-bottom: $lg;
+  }
+  .image-container {
+    border-radius: 10px 50px 50px 10px;
+    overflow: hidden;
+    flex-basis: 40%;
+    box-shadow: 20px 0px 25px -5px #000, 8px 0px 10px -6px #000;
+    img {
+      display: block;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+  }
+  @include device(mobile) {
+    width: 100%;
+    @include flex-layout(column, center, center);
+    .image-container {
+      box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
+      border-radius: 10px 10px 50px 50px;
+    }
+    box-shadow: 0px 0px 25px -5px #000, 0px 0px 10px -6px #000;
+  }
+}
+.auth-form {
+  height: 100%;
+  flex-basis: 60%;
+  @include flex-layout(column, center, center);
+
+  gap: $md;
+  .form-group {
+    width: 80%;
+    position: relative;
+
+    input {
+      border-radius: 10px;
+
+      width: 100%;
+      background-color: #ff4d295e;
+      padding: $md $xl;
+      font-size: $lg;
+      color: $text-color;
+    }
+  }
+  button {
+    margin: $lg 0;
+    font-size: $lg;
+  }
+  small {
+    margin-bottom: $lg;
+    a {
+      font-weight: 600;
+      color: $theme-accent1;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

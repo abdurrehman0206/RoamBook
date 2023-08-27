@@ -1,0 +1,29 @@
+.loader-container {
+  height: calc(100vh - 120px);
+  @include flex-layout(row, center, center);
+}
+.loader {
+  .icon {
+    font-size: $xxl;
+    color: $theme-accent1;
+    animation: aeroplane 3s linear infinite;
+    transform-origin: center;
+  }
+}
+@keyframes aeroplane {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(150px);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-90deg) translateX(150px);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-180deg) translateX(150px);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(-270deg) translateX(150px);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg) translateX(150px);
+  }
+}

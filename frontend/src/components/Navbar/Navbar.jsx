@@ -16,13 +16,25 @@ function Navbar() {
           </h1>
         </div>
         <div className="navbar-actions">
-          <button className="btn-primary">Login</button>
+          {!user ? (
+            <NavLink className="btn-primary" to="/login">
+              Login
+            </NavLink>
+          ) : (
+            <>
+              <button className="btn-primary" onClick={() => logout()}>
+                Logout
+              </button>
+            </>
+          )}
         </div>
-        <div className="navbar-links">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/tours">Tours</NavLink>
-          <NavLink to="/destinations">Destinations</NavLink>
-        </div>
+        {user && (
+          <div className="navbar-links">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/tours">Tours</NavLink>
+            <NavLink to="/destinations">Destinations</NavLink>
+          </div>
+        )}
       </div>
     </div>
   );

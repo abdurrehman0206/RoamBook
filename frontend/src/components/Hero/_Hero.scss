@@ -1,6 +1,7 @@
 .hero {
   // border: 1px solid red;
   @include flex-layout(row, space-between, center);
+  gap:$sm;
   @include device(mobile) {
     @include flex-layout(column-reverse, center, center);
     gap: $md;
@@ -25,6 +26,9 @@
     p {
       text-align: center;
     }
+  }
+  button{
+    margin-top: $xs;
   }
 }
 .hero-right {

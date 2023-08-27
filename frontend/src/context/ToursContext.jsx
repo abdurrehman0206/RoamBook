@@ -26,9 +26,9 @@ export const ToursContextProvider = ({ children }) => {
   const { user } = useAuthContext();
   const [loading, setLoading] = useState(false);
   useLayoutEffect(() => {
-    // if (!user) {
-    //   return;
-    // }
+    if (!user) {
+      return;
+    }
     const fetchTours = async () => {
       try {
         setLoading(true);
@@ -48,6 +48,8 @@ export const ToursContextProvider = ({ children }) => {
             type: "SET_TOURS",
             payload: json.data,
           });
+        } else if (!json.success) {
+          console.log(json.error);
         }
       } catch (error) {
         console.log(error.message);
