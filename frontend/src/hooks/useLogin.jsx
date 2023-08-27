@@ -6,8 +6,8 @@ export const useLogin = () => {
   const [error, setError] = useState(null);
   const { dispatch } = useAuthContext();
   const login = async (email, password) => {
-    setLoading(true);
     try {
+      setLoading(true);
       const response = await fetch(
         `${process.env.REACT_APP_BASE_URL}/api/users/login`,
 
@@ -25,7 +25,6 @@ export const useLogin = () => {
       const json = await response.json();
       if (json.success) {
         toast.success(json.message);
-        setLoading(false);
         setError(null);
         dispatch({
           type: "LOGIN",
@@ -34,13 +33,13 @@ export const useLogin = () => {
         localStorage.setItem("user", JSON.stringify(json.user));
       } else {
         toast.error(error);
-        setLoading(false);
         setError(json.error);
       }
     } catch (err) {
       toast.error(err.message);
-      setLoading(false);
       setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
   return { login, loading, error };

@@ -21,11 +21,13 @@ function Navbar() {
               Login
             </NavLink>
           ) : (
-            <>
-              <button className="btn-primary" onClick={() => logout()}>
+            <div className="user-info">
+              <img src={user.image} alt="" />
+              <p>{user.fullname}</p>
+              <button className="logout-btn" onClick={() => logout()}>
                 Logout
               </button>
-            </>
+            </div>
           )}
         </div>
         {user && (

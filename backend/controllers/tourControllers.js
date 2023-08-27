@@ -59,7 +59,7 @@ const postTour = async (req, res) => {
 };
 const getTours = async (req, res) => {
   try {
-    const tours = await Tour.find({}).sort({ createdAt: -1 });
+    const tours = await Tour.find({}).sort({ startDate: -1 });
     return res.status(200).send({
       success: true,
       message: "Tours fetched successfully",

@@ -46,3 +46,22 @@
     left: 0;
   }
 }
+.navbar-actions {
+  .user-info {
+    @include flex-layout(row, center, center);
+    gap: $sm;
+    img {
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid $theme-accent1;
+    }
+    .logout-btn {
+      color: $theme-accent1;
+      font-weight: 600;
+      font-size: $lg;
+      text-decoration: underline;
+    }
+  }
+}
