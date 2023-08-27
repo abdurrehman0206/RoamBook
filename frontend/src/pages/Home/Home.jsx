@@ -12,8 +12,6 @@ function Home() {
     if (!tours) return;
     let comp = [];
 
-    // just get the first 3 tours and make a tourComponent
-
     for (let i = 0; i < 3; i++) {
       comp.push(<TourCard key={i} tour={tours[i]} />);
     }
@@ -27,12 +25,6 @@ function Home() {
     <div className="home-container">
       <div className="home">
         <Hero />
-        <Pane
-          paneTitle="Latest Tour's"
-          paneButtonLead="tours"
-          paneCardComponent={tourComponent}
-          paneHasButton={true}
-        />
         <Pane
           paneTitle="Latest Tour's"
           paneButtonLead="tours"

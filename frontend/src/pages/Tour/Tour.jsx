@@ -4,7 +4,7 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { FaLocationDot } from "react-icons/fa6";
 import Booking from "../../components/Booking/Booking";
-import ReactStarsRating from "react-awesome-stars-rating";
+
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Loader from "../../components/Loader/Loader";
 function Tour() {
@@ -142,7 +142,6 @@ function Tour() {
               >
                 Book Now
               </button>
-              <ReactStarsRating onChange={onChange} size={19} isHalf={false} />
             </div>
           </section>
           <div className="tour-itinerary">
